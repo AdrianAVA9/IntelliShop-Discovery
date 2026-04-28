@@ -1,5 +1,4 @@
-# IntelliShop-Discovery
-## **Semantic E-Commerce Search**
+# IntelliShop-Discovery | **Semantic E-Commerce Search**
 
 ### **Overview**
 [cite_start]This repository focuses on building an **intelligent search engine** that moves beyond simple keyword matching to **semantic understanding**[cite: 1, 6]. [cite_start]By implementing **Retrieval-Augmented Generation (RAG)**, the system interprets user intent to deliver highly relevant results from complex inventory data[cite: 5, 7].
