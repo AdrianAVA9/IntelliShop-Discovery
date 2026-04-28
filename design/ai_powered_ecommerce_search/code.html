@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AuraSearch | Intelligent Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "soft-mauve": "#9B859D",
+                        "secondary-container": "#f4daf5",
+                        "tertiary-fixed": "#caead7",
+                        "aura-rose": "#D4A5A5",
+                        "on-background": "#1e1b1b",
+                        "secondary-fixed-dim": "#d7bfd9",
+                        "primary-container": "#d4a5a5",
+                        "neural-mint": "#2ECC71",
+                        "deep-charcoal": "#2D3436",
+                        "secondary": "#6c586e",
+                        "inverse-surface": "#342f2f",
+                        "surface-variant": "#e9e0e0",
+                        "logic-amber": "#FFBF00",
+                        "on-secondary-container": "#725e74",
+                        "primary-fixed-dim": "#ecbbba",
+                        "on-surface-variant": "#504444",
+                        "primary": "#7b5455",
+                        "on-tertiary-fixed": "#042015",
+                        "on-primary-fixed-variant": "#603d3e",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#251629",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#2d493b",
+                        "surface-container-low": "#fbf1f1",
+                        "on-tertiary-fixed-variant": "#314d3e",
+                        "secondary-fixed": "#f4daf5",
+                        "inverse-primary": "#ecbbba",
+                        "surface-container-high": "#efe6e5",
+                        "surface-dim": "#e1d8d7",
+                        "tertiary": "#486555",
+                        "background": "#fff8f7",
+                        "surface-tint": "#7b5455",
+                        "on-surface": "#1e1b1b",
+                        "surface-container-highest": "#e9e0e0",
+                        "surface": "#fff8f7",
+                        "on-primary-container": "#5d3a3b",
+                        "outline-variant": "#d4c2c2",
+                        "surface-bright": "#fff8f7",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdad9",
+                        "tertiary-container": "#99b8a6",
+                        "on-secondary-fixed-variant": "#534156",
+                        "on-primary-fixed": "#2f1314",
+                        "surface-container": "#f5eceb",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f8efee",
+                        "mist-white": "#F7F7F7",
+                        "error-container": "#ffdad6",
+                        "outline": "#827473",
+                        "tertiary-fixed-dim": "#aecebb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin": "32px",
+                        "xxl": "64px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "code": ["monospace"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h1": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aura-pulse {
+            box-shadow: 0 0 0 0 rgba(212, 165, 165, 0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 165, 165, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 165, 165, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 165, 165, 0); }
+        }
+        .thinking-ring {
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-mist-white font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-[#E2E2E2] dark:border-gray-800 shadow-sm">
+<nav class="flex justify-between items-center px-8 h-16 w-full max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<img alt="Logo" class="w-8 h-8 rounded-lg" data-alt="minimalist geometric logo icon with soft pink and charcoal accents on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrGbyDBbJPGeXBhfhv6i3zaHF4VGK3Dqb0W05javalllYh83S8_jSHpftx3xg-kxKvsfDb2tbzjr4zkyznG_-VjpfFHL0gtkBFK-KkDE5KHHQS9iU83j1ow6Skn9Ic3jqiSoec9btD7Zq_dJktxJjqljFhH_urKkRKa-H6yh3otZo5vVMK_i6uGBISmQ-I9ISzvnRgE8wYnQ7Dh0tz6M9P1krivSbG9oMeePERXhIxIySQxWE-Ldqt_-Sjfu-KDlJ7kGRxUJCwf4M"/>
+<span class="text-xl font-bold text-[#D4A5A5] tracking-tighter">AuraSearch</span>
+</div>
+<div class="hidden md:flex items-center gap-6 font-['Inter'] font-medium text-sm tracking-wide">
+<a class="text-[#D4A5A5] border-b-2 border-[#D4A5A5] pb-1" href="#">Collections</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-[#2D3436] dark:hover:text-white transition-colors duration-200" href="#">New Arrivals</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-[#2D3436] dark:hover:text-white transition-colors duration-200" href="#">Trending</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-[#2D3436] dark:hover:text-white transition-colors duration-200" href="#">Stores</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 rounded-full active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="p-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 rounded-full active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 rounded-full active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Search Section -->
+<section class="mb-12">
+<div class="text-center mb-8">
+<h1 class="font-h1 text-display text-deep-charcoal mb-2">Find what you need, before you search.</h1>
+<p class="font-body-lg text-soft-mauve">Ambient Intelligence processing over 2M+ inventory nodes.</p>
+</div>
+<!-- Intelligent Search Bar -->
+<div class="max-w-3xl mx-auto relative">
+<div class="bg-white rounded-full p-2 flex items-center gap-3 border border-[#E2E2E2] shadow-[0_4px_20px_rgba(45,52,54,0.04)] aura-pulse">
+<div class="pl-4 text-aura-rose flex items-center">
+<span class="material-symbols-outlined text-3xl" data-icon="search_spark">search_spark</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 font-body-md text-deep-charcoal placeholder:text-gray-400" placeholder="I'm looking for high-end minimalist ceramics for a bright kitchen..." type="text"/>
+<div class="flex items-center gap-2 pr-2">
+<div class="flex items-center gap-2 bg-mist-white px-3 py-1.5 rounded-full">
+<div class="w-2 h-2 rounded-full bg-logic-amber thinking-ring"></div>
+<span class="text-xs font-label-caps text-deep-charcoal opacity-60">Thinking...</span>
+</div>
+<button class="bg-aura-rose text-white px-6 py-2.5 rounded-full font-label-caps hover:brightness-105 active:scale-[0.98] transition-all">
+                            Analyze
+                        </button>
+</div>
+</div>
+<!-- Agentic Suggestions Overlay -->
+<div class="absolute top-full left-0 right-0 mt-4 bg-white/90 backdrop-blur-xl border border-[#E2E2E2] rounded-2xl p-6 shadow-xl z-10">
+<div class="flex items-start gap-4">
+<div class="bg-primary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-aura-rose" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex-1">
+<p class="font-h3 text-body-md text-deep-charcoal mb-4">Are you designing a workspace? Based on your query, I suggest:</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/30 hover:border-aura-rose/50 cursor-pointer transition-colors">
+<span class="text-xs font-label-caps text-soft-mauve block mb-1">Contextual Match</span>
+<p class="font-body-sm font-semibold">Minimalist Clay Vases</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/30 hover:border-aura-rose/50 cursor-pointer transition-colors">
+<span class="text-xs font-label-caps text-soft-mauve block mb-1">Inventory Alert</span>
+<p class="font-body-sm font-semibold">Teak Serving Trays</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/30 hover:border-aura-rose/50 cursor-pointer transition-colors">
+<span class="text-xs font-label-caps text-soft-mauve block mb-1">Style Sync</span>
+<p class="font-body-sm font-semibold">Linen Table Runners</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Results Layout -->
+<section class="grid grid-cols-12 gap-gutter mt-xxl">
+<!-- Filter Sidebar -->
+<aside class="col-span-12 md:col-span-3 space-y-8">
+<div>
+<h3 class="font-label-caps text-deep-charcoal mb-4">Semantic Filters</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-aura-rose text-white px-3 py-1 rounded-full text-xs font-medium cursor-pointer">Ceramics</span>
+<span class="bg-white border border-outline/10 text-deep-charcoal px-3 py-1 rounded-full text-xs font-medium cursor-pointer hover:bg-mist-white transition-colors">Kitchen</span>
+<span class="bg-white border border-outline/10 text-deep-charcoal px-3 py-1 rounded-full text-xs font-medium cursor-pointer hover:bg-mist-white transition-colors">Handmade</span>
+<span class="bg-white border border-outline/10 text-deep-charcoal px-3 py-1 rounded-full text-xs font-medium cursor-pointer hover:bg-mist-white transition-colors">Minimalist</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/20">
+<h3 class="font-label-caps text-deep-charcoal mb-4">Ambient Status</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-xs text-soft-mauve">Sync Status</span>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold text-neural-mint">Live</span>
+<div class="w-1.5 h-1.5 rounded-full bg-neural-mint"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-xs text-soft-mauve">Suppliers</span>
+<span class="text-xs font-semibold">42 Online</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Product Grid -->
+<div class="col-span-12 md:col-span-9">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-h2 text-deep-charcoal">Curated Insights <span class="text-soft-mauve font-normal text-body-md">(24 results)</span></h2>
+<div class="flex items-center gap-2">
+<span class="text-xs font-label-caps text-soft-mauve">Sort by:</span>
+<select class="bg-transparent border-none text-xs font-bold focus:ring-0 cursor-pointer">
+<option>Intelligence Rank</option>
+<option>Price: Low to High</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:shadow-xl hover:shadow-aura-rose/5 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern minimalist ceramic vase on a white pedestal with soft shadows and warm neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdw9kQOGYN0pMFX2Z8BB-s7d3qi9SfHTgqNgaKFAS7nfCS5ADuu4MmKIpb4teRX7mVQ2-hxEQ4Lri2BAWPezWNf3ibm-eEl3QG6SmKKR-Amo9UPIMTGzKiYb-Y27m6Q7usdHS0trsP3p9pkKmbB4h3fOlg0Ep_-g6BNhuYr60PVzb8QRo4acctWZZEr08_NcOWIAWXZWmbvUtYX-r-Q0iHULP-_8OvLjrBZ4f_8E2o5WLIXren7bDvCe2yztWyPMoOk5YXuKDqrl8"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md p-2 rounded-full shadow-sm cursor-pointer active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-aura-rose" data-icon="favorite">favorite</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-h3 text-body-md text-deep-charcoal">Ethereal Clay Pitcher</h4>
+<span class="font-bold text-aura-rose">$84.00</span>
+</div>
+<p class="text-xs text-soft-mauve mb-4">Matte finish, artisan-crafted in Denmark.</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white bg-gray-200"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-aura-rose"></div>
+</div>
+<button class="text-xs font-label-caps text-deep-charcoal hover:text-aura-rose transition-colors flex items-center gap-1">
+                                    Quick View <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:shadow-xl hover:shadow-aura-rose/5 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close up of premium stoneware plates stacked neatly with a linen napkin and soft natural side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADt0dNKyuz9SAgcxyCdEGojUKlJVWfDHCg9_WtjcsVKr0fAKgtqXUFFDb6Dhye5mCEJdJcRREPMOoqQV14a64j7G6JFbOvOYsSGEeYmvHSzKgeu0hsHfw_wd0qZjgQ9mKWpJyC_Aj6l2xdD86xxZaL5eLtUI6wZ56M_uiv-TuH41m0DUpRmTgCBvNnTAdeOWHLC1UYdTotCJORghIdwHFeMhhHB5MxdBOk5T9bDAfPwN3uA5QHpmlT2VL7qk6TFimcLyXySOZ67Ec"/>
+<div class="absolute top-4 left-4 bg-logic-amber/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider shadow-sm">
+                                High Intent
+                            </div>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-gray-300" data-icon="favorite">favorite</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-h3 text-body-md text-deep-charcoal">Nordic Plate Set</h4>
+<span class="font-bold text-aura-rose">$120.00</span>
+</div>
+<p class="text-xs text-soft-mauve mb-4">Set of 4, dishwasher safe and scratch resistant.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-1">
+<div class="w-4 h-4 rounded-full bg-soft-mauve"></div>
+<div class="w-4 h-4 rounded-full bg-deep-charcoal"></div>
+</div>
+<button class="text-xs font-label-caps text-deep-charcoal hover:text-aura-rose transition-colors flex items-center gap-1">
+                                    Quick View <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white rounded-2xl overflow-hidden border border-outline-variant/20 hover:shadow-xl hover:shadow-aura-rose/5 transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="sleek modern glass coffee dripper and carafe set on a wooden counter in a sunlit airy kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-W0B1__jGnJLQhPf_9E_X8XsT48PtZ5wES7Qz4oYKJwe5klM6zfOP3sz2Behgi7vP0DtGCJqWkW7ANSGBzLL00fqNRzMHEmy9Q9QLZBHJ2Oz9wiSB8DN6g8dOX0zHPs01vGVjTS0gobw4kum0vXaMNBksbf5OFtdU-DXAQSqaCzvOTzZy8XIE8X1FuczQA7JDdz1tZqqP-Yke6IUao9rhJdJVLmCSIAGwB8lSdE_CIqVCHAYhsyTY8m8DGwPbvDaH3ZHGVVhxIJA"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-gray-300" data-icon="favorite">favorite</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-h3 text-body-md text-deep-charcoal">Aura Brew Set</h4>
+<span class="font-bold text-aura-rose">$45.00</span>
+</div>
+<p class="text-xs text-soft-mauve mb-4">Borosilicate glass with organic cork sleeve.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-1">
+<div class="w-4 h-4 rounded-full bg-[#E2E2E2]"></div>
+</div>
+<button class="text-xs font-label-caps text-deep-charcoal hover:text-aura-rose transition-colors flex items-center gap-1">
+                                    Quick View <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Loading State / AI Pagination -->
+<div class="mt-12 flex flex-col items-center gap-4">
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-aura-rose animate-bounce"></div>
+<div class="w-2 h-2 rounded-full bg-aura-rose animate-bounce" style="animation-delay: 0.2s"></div>
+<div class="w-2 h-2 rounded-full bg-aura-rose animate-bounce" style="animation-delay: 0.4s"></div>
+</div>
+<p class="text-xs font-label-caps text-soft-mauve">Synchronizing more results from Global Vault</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-[#E2E2E2] dark:border-gray-800 shadow-[0_-4px_20px_rgba(45,52,54,0.04)] z-50 flex justify-around items-center px-4 py-3 pb-safe rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#D4A5A5] bg-[#D4A5A5]/5 rounded-xl px-4 py-1 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search_spark">search_spark</span>
+<span>Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Inter'] text-[10px] font-semibold uppercase tracking-widest active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Me</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-[#F7F7F7] dark:bg-slate-950 border-t border-[#E2E2E2] dark:border-gray-800 w-full mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-8 gap-4 w-full">
+<div class="flex flex-col gap-2">
+<span class="text-[#D4A5A5] font-bold">AuraSearch</span>
+<p class="font-['Inter'] text-xs font-light text-gray-400">© 2024 AuraSearch. Powered by Ambient Intelligence.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs font-light text-gray-500 hover:text-[#D4A5A5] transition-colors" href="#">Support</a>
+<a class="font-['Inter'] text-xs font-light text-gray-500 hover:text-[#D4A5A5] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs font-light text-gray-500 hover:text-[#D4A5A5] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs font-light text-gray-500 hover:text-[#D4A5A5] transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
